@@ -23,9 +23,7 @@ const Modal = (props) => {
 
     return <Fragment>
        {ReactDOM.createPortal(<BackDrop onHideCart={props.onHideCart} />, portalElement)}
-       {ReactDOM.createPortal(<ModalOverlays>{props.children}</ModalOverlays>,
-       portalElement
-       )}
+       {ReactDOM.createPortal(<ModalOverlays>{props.children}</ModalOverlays>,portalElement)}
     </Fragment>
       
 

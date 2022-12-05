@@ -23,6 +23,9 @@ const MealItemForm = (props) =>{
     props.onAddToCart(enteredAmountNumber);
 }
 
+
+//refs do not work on custom components
+
     return (
         <form action="" className={classes.form} onSubmit={submitHandler}>
             <Input
