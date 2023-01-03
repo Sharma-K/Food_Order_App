@@ -8,6 +8,8 @@ const Cart = (props) => {
 
     const cartCtx = useContext(CartContext);
     const [isCheckOut, setIsCheckOut] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [didSubmit, setDidSubmit] = useState(false);
 
     const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
     const hasItems = cartCtx.item.length>0;
@@ -26,6 +28,7 @@ const Cart = (props) => {
     };
 
     const submitHandler = (userData) =>{
+        setIsSubmitting(true);
         fetch('https://food-delivery-da137-default-rtdb.firebaseio.com/orders.json',{
             method: 'POST',
             body: JSON.stringify({
@@ -33,6 +36,8 @@ const Cart = (props) => {
                 orderedItems: cartCtx.item
             })
         })
+        setIsSubmitting(false);
+        setDidSubmit(true);
     }
 
    const cartItems = <ul className={classes['cart-items']} >
