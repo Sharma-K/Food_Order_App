@@ -1,2 +1,2 @@
 # Food_Order_App
-React application
+React based application
