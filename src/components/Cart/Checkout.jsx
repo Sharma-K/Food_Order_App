@@ -52,7 +52,12 @@ const Checkout = (props) => {
        return;
     }
 
-
+props.onConfirm({
+  name:name,
+  street:street,
+  postal:postal,
+  city:city
+})
     
   };
 
